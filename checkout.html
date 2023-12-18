@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Оформление заказа</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<!-- Header -->
+<header class="header header-template" id="header">
+  <h1 style="position: absolute; visibility: hidden; opacity: 0;"></h1>
+  <div class="container">
+    <div class="header__top">
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="toggle">
+        <div class="top-bun"></div>
+        <div class="meat"></div>
+        <div class="bottom-bun"></div>
+      </div>
+      <div class="header__top-left">
+        <a class="logo header__logo" href="index.html"><img src="img/header-template/logo.svg" alt="logo"></a>
+      </div>
+      <div class="header__top-center">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-item_catalog active">
+              <a class="header__nav-link" href="index.html">
+                Главная
+                <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.97187 5.78989C5.26355 6.07004 5.73644 6.07004 6.02812 5.78989L10.7813 1.22462C11.0729 0.944467 11.0729 0.490261 10.7813 0.210111C10.4895 -0.0700369 10.0167 -0.0700369 9.72502 0.210111L5.49999 4.26813L1.27501 0.210111C0.983328 -0.0700369 0.510433 -0.0700369 0.218756 0.210111C-0.0729186 0.490261 -0.0729186 0.944467 0.218756 1.22462L4.97187 5.78989ZM4.75312 4.56527V5.28264H6.24687V4.56527H4.75312Z"
+                    fill="#F2B918" />
+                </svg>
+              </a>
+              <ul class="header__catalog-list">
+                <li>
+                  <a href="#">Категория 1</a>
+                </li>
+                <li>
+                  <a href="#">Категория 2</a>
+                </li>
+                <li>
+                  <a href="#">Категория 3</a>
+                </li>
+                <li>
+                  <a href="#">Категория 4</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Статьи</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Рецепты</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <button type="button" class="header__personal header__personal-btn btn d-flex d-xl-none" data-toggle="modal"
+            data-target="#modal-order">Заказать
+            звонок</button>
+        </nav>
+        <button type="button" class="header__personal btn d-none d-md-flex" data-toggle="modal"
+          data-target="#modal-order">Заказать
+          звонок</button>
+      </div>
+      <div class="header__top-right">
+        <div class="header__contacts">
+          <a href="#" class="header__address d-none d-sm-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+          <a href="tel:88005553535" class="header__phone d-none d-sm-block">8 (800) 555-35-35</a>
+          <a href="tel:88005553535" class="header__phone d-block d-sm-none"><img src="img/icons/phone-black.svg"
+              alt="icon"></a>
+        </div>
+      </div>
+
+    </div><!-- /header__top -->
+    <div class="header__bottom">
+      <div class="header__bottom-col">
+        <button class="header__btn-catalog btn">
+          <span>Каталог</span>
+          <div class="hamburger" id="toggle_1">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </div>
+        </button>
+      </div>
+      <div class="header__bottom-col">
+        <div class="header__search">
+          <div class="header__search-wrapper d-none d-md-flex">
+            <button class="header__search-btn">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <input class="d-none d-md-flex" type="search" placeholder="Введите наименование товара">
+          </div>
+
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="header__search-wrapper d-flex d-md-none">
+                <button class="header__search-btn">
+                  <img src="img/icons/search.svg" alt="icon">
+                </button>
+                <input type="search" placeholder="Введите наименование товара">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom-col">
+        <a href="#" type="button" class="header__personal btn">
+          <img src="img/icons/user.svg" alt="icon">
+          <span class="d-none d-lg-block">
+            Личный кабинет
+          </span>
+        </a>
+      </div>
+      <div class="header__bottom-col">
+        <a class="header__cart btn" href="cart.html">
+          <img src="img/icons/cart.svg" alt="icon">
+          <span class="d-none d-lg-block">Корзина</span>
+          <span class="header__cart-count">5</span>
+        </a>
+      </div>
+    </div><!-- /header__bottom -->
+    <a href="#" class="header__address d-sm-none d-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+  </div>
+</header>
+		<main class="main">
+			<!-- breadcrumbs-catalog -->
+<div class="breadcrumbs" id="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__wrapper">
+      <div class="breadcrumbs__links">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+      </div>   
+      <span>Дрожжи</span>
+    </div>
+  </div>
+</div>
+			<!-- checkout -->
+<section class="checkout" id="checkout">
+  <div class="container">
+    <div class="checkout__inner">
+      <div class="checkout__left">
+        <h2 class="section-title">Оформление заказа</h2>
+        <div class="table">
+          <div class="table__title section-title">Личные данные</div>
+          <div class="table__content">
+            <div class="table__content-row">
+              <div class="input-wrapper">
+                <label for="checkout-name">ФИО *</label>
+                <input type="text" id="checkout-name" name="name">
+              </div>
+              <div class="input-wrapper">
+                <label for="checkout-name">Телефон *</label>
+                <input type="tel" id="checkout-phone" name="phone">
+              </div>
+            </div><!-- /table__content-row -->
+            <div class="table__content-row">
+              <div class="input-wrapper">
+                <label for="checkout-email">E-mail *</label>
+                <input type="email" id="checkout-email" name="e-mail">
+              </div>
+
+            </div><!-- /table__content-row -->
+          </div><!-- /table__content -->
+        </div><!-- /table -->
+        <div class="table">
+          <div class="table__title section-title">Способ доставки</div>
+          <div class="table__content">
+            <div class="table__content-row">
+
+              <div class="catalog-param__checkbox">
+                <input type="checkbox" id="checkbox-1_1" checked>
+                <label for="checkbox-1_1">
+                  <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                  <span class="catalog-param__checkbox-text">Доставка в регионы (СДЭК) склад - склад</span>
+                </label>
+              </div>
+            </div><!-- /table__content-row -->
+            <div class="table__content-row table_row">
+              <div class="table__content-title">
+                Введите адрес ближайшего пункта выдачи
+              </div>
+              <input class="table__content-input" type="text">
+
+            </div><!-- /table__content-row -->
+            <div class="table__content-row table_row">
+              <div class="catalog-param__checkbox">
+                <input type="checkbox" id="checkbox-2_1">
+                <label for="checkbox-2_1">
+                  <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                  <span class="catalog-param__checkbox-text">Доставка в регионы (СДЭК) склад - до двери</span>
+                </label>
+              </div>
+              <div class="catalog-param__checkbox">
+                <input type="checkbox" id="checkbox-3_1">
+                <label for="checkbox-3_1">
+                  <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                  <span class="catalog-param__checkbox-text">Доставка по Казани</span>
+                </label>
+              </div>
+              <div class="catalog-param__checkbox">
+                <input type="checkbox" id="checkbox-4_1">
+                <label for="checkbox-4_1">
+                  <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                  <span class="catalog-param__checkbox-text">Самовывоз</span>
+                </label>
+              </div>
+            </div><!-- /table__content-row -->
+          </div><!-- /table__content -->
+        </div><!-- /table -->
+        <div class="table">
+          <div class="table__title section-title">Информация о доставке</div>
+          <div class="table__content">
+            <div class="table__content-row">
+              <div class="input-wrapper">
+                <label for="address-country">Страна</label>
+                <input type="text" id="address-country" name="address-country">
+              </div>
+              <div class="input-wrapper">
+                <label for="address-region">Область</label>
+                <input type="text" id="address-region" name="address-region">
+              </div>
+            </div><!-- /table__content-row -->
+            <div class="table__content-row">
+              <div class="input-wrapper">
+                <label for="address-city">Город</label>
+                <input type="text" id="address-city" name="address-city">
+              </div>
+              <div class="input-wrapper">
+                <label for="address-index">Почтовый индекс</label>
+                <input type="text" id="address-index" name="address-index">
+              </div>
+            </div><!-- /table__content-row -->
+            <div class="table__content-row">
+              <div class="input-wrapper">
+                <label for="address-street">Улица</label>
+                <input type="text" id="address-street" name="address-street">
+              </div>
+              <div class="input-wrapper">
+                <label for="address-house">Дом</label>
+                <input type="text" id="address-house" name="address-house">
+              </div>
+            </div><!-- /table__content-row -->
+            <div class="table__content-row">
+              <div class="input-wrapper">
+                <label for="address-kvartira">Кв/офис</label>
+                <input type="text" id="address-kvartira" name="address-kvartira">
+              </div>
+            </div><!-- /table__content-row -->
+          </div><!-- /table__content -->
+        </div><!-- /table -->
+        <div class="table">
+          <div class="table__title section-title">Способ оплаты</div>
+          <div class="table__content">
+            <div class="table__content-row">
+              <div class="input-wrapper input-wrapper__change">
+                <input type="radio" id="payment-1" name="payment" value="Онлайн оплата">
+                <label for="payment-1">
+                  <div class="table__content-img">
+                    <img src="img/checkout/table-1.png" alt="icon">
+                  </div>
+                </label>
+                <span class="input-wrapper__change-title">Оплата по карте</span>
+              </div>
+              <div class="input-wrapper input-wrapper__change">
+                <input type="radio" id="payment-2" name="payment" value="Оплата при получении">
+                <label for="payment-2">
+                  <div class="table__content-img">
+                    <img src="img/checkout/table-2.png" alt="icon">
+                  </div>
+                </label>
+                <span class="input-wrapper__change-title">Наличными при получении</span>
+              </div>
+            </div><!-- /table__content-row -->
+          </div><!-- /table__content -->
+          <button class="cart__offer-send btn">Оформить</button>
+        </div><!-- /table -->
+      </div><!-- /checkout__left -->
+      <div class="checkout__right">
+        <div class="cart__offer">
+          <div class="cart__offer-head">
+            <span>Чтобы получить скидку 3% добавьте
+              товара на сумму более 5000 ₽</span>
+            <img src="img/cart/icon-offer.svg" alt="icon">
+          </div>
+          <div class="cart__offer-offset">
+
+          </div>
+          <div class="checkout__products">
+            <div class="checkout__products-head">
+              <div class="checkout__products-title">
+                Ваш заказ
+              </div>
+              <a href="cart.html" class="checkout__products-cart">
+                Вернуться в корзину
+              </a>
+            </div>
+            <div class="checkout__products-content">
+              <div class="checkout__products-row">
+                <div class="checkout__products-col">
+                  <div class="checkout__products-name">
+                    Резиновая пробка коническая
+                    с отверстием под гидрозатвор (Ø43,5x35, h40)
+                  </div>
+                  <div class="checkout__products-number">
+                    1 шт.
+                  </div>
+                </div>
+                <div class="checkout__products-col">
+                  <div class="checkout__products-price">
+                    456 ₽
+                  </div>
+                </div>
+              </div>
+              <div class="checkout__products-row">
+                <div class="checkout__products-col">
+                  <div class="checkout__products-name">
+                    Резиновая пробка коническая
+                    с отверстием под гидрозатвор (Ø43,5x35, h40)
+                  </div>
+                  <div class="checkout__products-number">
+                    1 шт.
+                  </div>
+                </div>
+                <div class="checkout__products-col">
+                  <div class="checkout__products-price">
+                    456 ₽
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart__offer-top">
+            <div class="cart__number">
+              <span>Всего товаров:</span>
+              <span></span>
+              <span>12 шт.</span>
+            </div>
+            <div class="cart__number">
+              <span>Сумма заказа:</span>
+              <span></span>
+              <span>12 шт.</span>
+            </div>
+            <div class="cart__number">
+              <span>Доставка:</span>
+              <span></span>
+              <span>12 шт.</span>
+            </div>
+            <div class="cart__number">
+              <span>Сумма скидки:</span>
+              <span></span>
+              <span>12 шт.</span>
+            </div>
+            <div class="cart__number">
+              <span>Упаковка:</span>
+              <span></span>
+              <span>12 шт.</span>
+            </div>
+          </div>
+          <div class="cart__offer-bottom">
+            <div class="cart__offer-price">
+              <span>Итого к оплате:</span>
+              <span></span>
+              <span class="cart__offer-total">2 256 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /checkout__right -->
+    </div>
+  </div>
+</section>		
+			<!-- consult -->
+<section class="consult" id="consult">
+  <div class="container">
+    <div class="consult__left">
+      <div class="consult__title">
+        Нужна консультация?
+      </div>
+    </div>
+    <div class="consult__right">
+      <div class="consult__text">
+        <p>
+          Поищем необходимый вам товар. Подберем выгодный способ доставки.
+        </p>
+        <p>
+          Проконсультируем, как работать с устройством.
+        </p>
+        <p>
+          Расскажем о каждом товаре более подробно.
+        </p>
+      </div><!-- /consult__text -->
+      <div class="consult__contacts">
+        <form class="consult__form" action="#">
+          <input type="tel" placeholder="+7 (ххх) ххх-хх-хх">
+          <button class="consult__form-btn"><img src="img/consult/arrow.svg" alt="icon"></button>
+        </form>
+      </div>
+      <ul class="social__list">
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/telegram.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/whatsapp.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/viber.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/instagram.svg" alt="icon">
+          </a>
+        </li>
+      </ul>
+    </div><!-- /consult__right -->
+  </div>
+</section>
+		</main>
+		<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col first">
+        <a class="footer__logo logo" href="#">
+          <img src="img/footer/footer-logo.svg" alt="logo">
+        </a>
+        <div class="footer__contacts">
+          <a href="tel:88005553535" class="footer__phone">8 (800) 555-35-35</a>
+          <button type="button" class="footer__btn btn" data-toggle="modal" data-target="#modal-login">Заказать
+            звонок</button>
+          <a href="mailto:info@domain.ru " class="footer__mail">info@domain.ru </a>
+        </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/telegram.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/whatsapp.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/viber.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/instagram.svg" alt="icon">
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>
+            Копирование материалов запрещено.
+            Все права защищены. ООО “ООО”.
+          </p>
+        </div>
+      </div>
+      <div class="footer__col second">
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Покупателю</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Вопрос-ответ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Каталог</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Пиво разливное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво бутылочное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво светлое</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво тёмное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Крафтовое</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Информация</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">О компании</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Информация</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Калькуляторы</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 1</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 2</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- modals -->
+
+<!-- modal-login -->
+<div class="modal fade modal-order" id="modal-order" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-order-title">Оставить заявку</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="img/modal/close.svg" alt="icon"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table__content">
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="modal-email">E-mail или номер телефона *</label>
+              <input type="text" id="modal-email" name="e-mail">
+            </div>
+          </div><!-- /table__content-row -->
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="order-text">Сообщение</label>
+              <input type="text" id="order-text" name="text">
+            </div>
+          </div><!-- /table__content-row -->
+        </div><!-- /table__content -->
+      </div>
+      <div class="modal-footer">
+        <div class="agreement agreement-contacts">
+          <input type="checkbox" id="agreement-checkbox-contacts2" class="custom-checkbox" checked>
+          <label for="agreement-checkbox-contacts2" class="custom-checkbox-text">
+            <p>
+              Я согласен (-на) с <a href="#">политикой конфиденциальности</a> 
+            </p>               
+          </label>
+        </div>
+        <button class="modal-order__btn btn">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+	<script src="js/app.min.js"></script>
+
+</body>
+
+</html>

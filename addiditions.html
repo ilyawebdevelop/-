@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Добавить рецепт</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<!-- Header -->
+<header class="header header-template" id="header">
+  <h1 style="position: absolute; visibility: hidden; opacity: 0;"></h1>
+  <div class="container">
+    <div class="header__top">
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="toggle">
+        <div class="top-bun"></div>
+        <div class="meat"></div>
+        <div class="bottom-bun"></div>
+      </div>
+      <div class="header__top-left">
+        <a class="logo header__logo" href="index.html"><img src="img/header-template/logo.svg" alt="logo"></a>
+      </div>
+      <div class="header__top-center">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-item_catalog active">
+              <a class="header__nav-link" href="index.html">
+                Главная
+                <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.97187 5.78989C5.26355 6.07004 5.73644 6.07004 6.02812 5.78989L10.7813 1.22462C11.0729 0.944467 11.0729 0.490261 10.7813 0.210111C10.4895 -0.0700369 10.0167 -0.0700369 9.72502 0.210111L5.49999 4.26813L1.27501 0.210111C0.983328 -0.0700369 0.510433 -0.0700369 0.218756 0.210111C-0.0729186 0.490261 -0.0729186 0.944467 0.218756 1.22462L4.97187 5.78989ZM4.75312 4.56527V5.28264H6.24687V4.56527H4.75312Z"
+                    fill="#F2B918" />
+                </svg>
+              </a>
+              <ul class="header__catalog-list">
+                <li>
+                  <a href="#">Категория 1</a>
+                </li>
+                <li>
+                  <a href="#">Категория 2</a>
+                </li>
+                <li>
+                  <a href="#">Категория 3</a>
+                </li>
+                <li>
+                  <a href="#">Категория 4</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Статьи</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Рецепты</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <button type="button" class="header__personal header__personal-btn btn d-flex d-xl-none" data-toggle="modal"
+            data-target="#modal-order">Заказать
+            звонок</button>
+        </nav>
+        <button type="button" class="header__personal btn d-none d-md-flex" data-toggle="modal"
+          data-target="#modal-order">Заказать
+          звонок</button>
+      </div>
+      <div class="header__top-right">
+        <div class="header__contacts">
+          <a href="#" class="header__address d-none d-sm-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+          <a href="tel:88005553535" class="header__phone d-none d-sm-block">8 (800) 555-35-35</a>
+          <a href="tel:88005553535" class="header__phone d-block d-sm-none"><img src="img/icons/phone-black.svg"
+              alt="icon"></a>
+        </div>
+      </div>
+
+    </div><!-- /header__top -->
+    <div class="header__bottom">
+      <div class="header__bottom-col">
+        <button class="header__btn-catalog btn">
+          <span>Каталог</span>
+          <div class="hamburger" id="toggle_1">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </div>
+        </button>
+      </div>
+      <div class="header__bottom-col">
+        <div class="header__search">
+          <div class="header__search-wrapper d-none d-md-flex">
+            <button class="header__search-btn">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <input class="d-none d-md-flex" type="search" placeholder="Введите наименование товара">
+          </div>
+
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="header__search-wrapper d-flex d-md-none">
+                <button class="header__search-btn">
+                  <img src="img/icons/search.svg" alt="icon">
+                </button>
+                <input type="search" placeholder="Введите наименование товара">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom-col">
+        <a href="#" type="button" class="header__personal btn">
+          <img src="img/icons/user.svg" alt="icon">
+          <span class="d-none d-lg-block">
+            Личный кабинет
+          </span>
+        </a>
+      </div>
+      <div class="header__bottom-col">
+        <a class="header__cart btn" href="cart.html">
+          <img src="img/icons/cart.svg" alt="icon">
+          <span class="d-none d-lg-block">Корзина</span>
+          <span class="header__cart-count">5</span>
+        </a>
+      </div>
+    </div><!-- /header__bottom -->
+    <a href="#" class="header__address d-sm-none d-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+  </div>
+</header>
+		<main class="main">
+			<!-- breadcrumbs-catalog -->
+<div class="breadcrumbs" id="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__wrapper">
+      <div class="breadcrumbs__links">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+      </div>   
+      <span>Дрожжи</span>
+    </div>
+  </div>
+</div>
+			<!-- addiditions -->
+<section class="addiditions" id="addiditions">
+  <div class="container title-container">
+    <h2 class="section-title">Добавить свой рецепт</h2>
+  </div>
+  <div class="addiditions-section pt-0">
+    <div class="container">
+      <h3>Этап 1 - Стиль рецепта <span>*</span></h3>
+      <div class="addiditions-section__row">
+        <div class="addiditions-section__input-wrapper">
+          <label for="category-style">Выберите категорию стиля</label>
+          <select name="category-style" id="category-style">
+            <option value="1">Категория 1</option>
+            <option value="2">Категория 2</option>
+            <option value="3">Категория 3</option>
+            <option value="4">Категория 4</option>
+          </select>
+        </div>
+        <div class="addiditions-section__input-wrapper">
+          <label for="style">Выберите стиль</label>
+          <select name="style" id="style">
+            <option value="1">Стиль 1</option>
+            <option value="2">Стиль 2</option>
+            <option value="3">Стиль 3</option>
+            <option value="4">Стиль 4</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div><!-- /addiditions-section -->
+  <div class="addiditions-section">
+    <div class="container">
+      <h3>Этап 2 - Параметры рецепта <span>*</span></h3>
+      <div class="addiditions-section__row">
+        <div class="addiditions-section__input-wrapper">
+          <label for="effect">Эффективность</label>
+          <input type="text" id="effect">
+        </div>
+        <div class="addiditions-section__input-wrapper">
+          <label for="email">E-mail</label>
+          <input type="email" id="email">
+        </div>
+      </div>
+    </div>
+  </div><!-- /addiditions-section -->
+  <div class="addiditions-section">
+    <div class="container">
+      <h3>Этап 2 - Параметры рецепта<span>*</span></h3>
+      <div class="addiditions-section__row">
+        <div class="addiditions-section__input-wrapper">
+          <label for="effect_1">Эффективность</label>
+          <input type="text" id="effect_1">
+        </div>
+        <div class="addiditions-section__input-wrapper">
+          <label for="atten">Аттенюация</label>
+          <input type="text" id="atten">
+        </div>
+      </div>
+    </div>
+  </div><!-- /addiditions-section -->
+  <div class="addiditions-section">
+    <div class="container">
+      <div class="addiditions-section__row mb-4">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_1">Кипячение</label>
+          <input type="text" id="param_1">
+        </div>
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_2">Вирпул</label>
+          <input type="text" id="param_2">
+        </div>
+      </div>
+      <div class="addiditions-section__row mb-4">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_3">Размер партии</label>
+          <input type="text" id="param_3">
+        </div>
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_4">Испарение</label>
+          <input type="text" id="param_4">
+        </div>
+      </div>
+      <div class="addiditions-section__row">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_5">Охлаждение</label>
+          <input type="text" id="param_5">
+        </div>
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_6">Размер до кипа</label>
+          <input type="text" id="param_6">
+        </div>
+      </div>
+    </div>
+  </div><!-- /addiditions-section -->
+  <div class="addiditions-section">
+    <div class="container">
+      <h3>Этап 3 - Добавление ингредиентов <span>*</span></h3>
+      <div class="addiditions-section__row-grid-wrapper">
+        <div class="addiditions-section__row-grid mb-3">
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_7">Зерновые ингредиенты</label>
+            <input type="text" id="param_7">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_8">Внесение</label>
+            <select name="param_8" id="param_8">
+              <option value="1">Внесение 1</option>
+              <option value="2">Внесение 2</option>
+              <option value="3">Внесение 3</option>
+              <option value="4">Внесение 4</option>
+            </select>
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_9">Вес</label>
+            <input type="text" id="param_9">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_10">Смесь</label>
+            <input type="text" id="param_10">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <button class="addiditions-section__btn-add addiditions-section__btn-add-first"
+              type="button">Добавить</button>
+          </div>
+        </div>
+        <div class="addiditions-section__row-grid">
+          <div class="addiditions-section__input-wrapper">
+            <input type="text" id="param_11">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <select name="param_8" id="param_12">
+              <option value="1">Внесение 1</option>
+              <option value="2">Внесение 2</option>
+              <option value="3">Внесение 3</option>
+              <option value="4">Внесение 4</option>
+            </select>
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <input type="text" id="param_13">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <input type="text" id="param_14">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <button class="addiditions-section__btn-add addiditions-section__btn-add-first"
+              type="button">Добавить</button>
+          </div>
+        </div>
+      </div>
+      <div class="addiditions-section__row-grid-lg-wrapper mt-5 mb-5">
+        <div class="addiditions-section__row-grid-lg">
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_15">Сахаросодержащие ингредиенты</label>
+            <input type="text" id="param_15">
+          </div>
+          <div class="addiditions-section__input-wrapper d-flex addiditions-section__input-wrapper-opt">
+            <div class="addiditions-section__descr-wrapper">
+              <label for="param_16">Внесение</label>
+              <select name="param_16" id="param_16">
+                <option value="1">Внесение 1</option>
+                <option value="2">Внесение 2</option>
+                <option value="3">Внесение 3</option>
+                <option value="4">Внесение 4</option>
+              </select>
+            </div>
+            <span>кипятить</span>
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <input type="text" id="param_17">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_18">Вес</label>
+            <input type="text" id="param_18">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_19">Смесь</label>
+            <input type="text" id="param_19">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <button class="addiditions-section__btn-add addiditions-section__btn-add-second"
+              type="button">Добавить</button>
+          </div>
+          <!-- <div class="addiditions-section__input-wrapper">
+            <button class="addiditions-section__btn-close" type="button"><img src="img/close.svg" alt="close"></button>
+          </div> -->
+        </div>
+      </div>
+      <div class="addiditions-section__row_1 mb-5">
+        <div class="addiditions-section__row mb-3">
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_20">Хмель</label>
+            <input type="text" id="param_20">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <div class="addiditions-section__input-wrapper">
+              <button class="addiditions-section__btn-add addiditions-section__btn-add-third"
+                type="button">Добавить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="addiditions-section__row_2 mb-5">
+        <div class="addiditions-section__row mb-3">
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_21">Дрожжи</label>
+            <input type="text" id="param_21">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <div class="addiditions-section__input-wrapper">
+              <button class="addiditions-section__btn-add addiditions-section__btn-add-forth"
+                type="button">Добавить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="addiditions-section__row mb-5">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_22">Профиль воды</label>
+          <input type="text" id="param_22">
+        </div>
+      </div>
+      <div class="addiditions-section__row_3  mb-5">
+        <div class="addiditions-section__row mb-3">
+          <div class="addiditions-section__input-wrapper">
+            <label for="param_23">Другие ингредиенты</label>
+            <input type="text" id="param_23">
+          </div>
+          <div class="addiditions-section__input-wrapper">
+            <div class="addiditions-section__input-wrapper">
+              <button class="addiditions-section__btn-add addiditions-section__btn-add-fifth" type="button">Добавить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /addiditions-section -->
+  <div class="addiditions-section">
+    <div class="container">
+      <h3>Этап 4 - Метод затирания</h3>
+      <div class="addiditions-section__row mb-5">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_24">Выбрать</label>
+          <select name="param_24" id="param_24">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+          </select>
+        </div>
+      </div>
+      <h3>Этап 5 - Метод карбонизации</h3>
+      <div class="addiditions-section__row mb-5">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_25">Выбрать</label>
+          <select name="param_25" id="param_25">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+          </select>
+        </div>
+      </div>
+      <h3>Этап 6 - Примечания</h3>
+      <textarea class="mb-5" name="description" id="description" cols="30" rows="10"></textarea>
+      <h3>Этап 7 - Фотографии</h3>
+      <div class="photo-wrapper mb-5">
+        <span class="photo-wrapper__change mb-1 d-block">Выбрать</span>
+        <ul class="photo-list">
+          <li class="photo-item photo-item_1" style="background-image: url('');">
+            <input type="file" id="file-1">
+            <label for="file-1">
+              +
+            </label>
+          </li>
+          <li class="photo-item photo-item_2" style="background-image: url('');">
+            <input type="file" id="file-2">
+            <label for="file-2">
+              +
+            </label>
+          </li>
+          <li class="photo-item photo-item_3" style="background-image: url('');">
+            <input type="file" id="file-3">
+            <label for="file-3">
+              +
+            </label>
+
+          </li>
+          <li class="photo-item photo-item_4" style="background-image: url('');">
+            <input type="file" id="file-4">
+            <label for="file-4">
+              +
+            </label>
+          </li>
+        </ul>
+        <span class="max-value">Макс.загружаемый размер 1мб.</span>
+      </div>
+      <h3>Этап 8 - Название и авторство</h3>
+      <div class="addiditions-section__row">
+        <div class="addiditions-section__input-wrapper">
+          <label for="param_26">Название рецепта <span>*</span></label>
+          <input type="text" id="param_26">
+        </div>
+      </div>
+      <button class="btn addiditions__btn addiditions-section__btn-add">Сохранить изменения</button>
+      <div class="save-description">
+        Чтобы сохранить рецепт на сервере <a href="#" target="_blank"> Зарегистрируйтесь</a> или <a href="#"
+          target="_blank">Войдите</a> как
+        пользователь
+      </div>
+    </div>
+  </div><!-- /addiditions-section -->
+</section>		
+			<!-- consult -->
+<section class="consult" id="consult">
+  <div class="container">
+    <div class="consult__left">
+      <div class="consult__title">
+        Нужна консультация?
+      </div>
+    </div>
+    <div class="consult__right">
+      <div class="consult__text">
+        <p>
+          Поищем необходимый вам товар. Подберем выгодный способ доставки.
+        </p>
+        <p>
+          Проконсультируем, как работать с устройством.
+        </p>
+        <p>
+          Расскажем о каждом товаре более подробно.
+        </p>
+      </div><!-- /consult__text -->
+      <div class="consult__contacts">
+        <form class="consult__form" action="#">
+          <input type="tel" placeholder="+7 (ххх) ххх-хх-хх">
+          <button class="consult__form-btn"><img src="img/consult/arrow.svg" alt="icon"></button>
+        </form>
+      </div>
+      <ul class="social__list">
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/telegram.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/whatsapp.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/viber.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/instagram.svg" alt="icon">
+          </a>
+        </li>
+      </ul>
+    </div><!-- /consult__right -->
+  </div>
+</section>
+		</main>
+		<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col first">
+        <a class="footer__logo logo" href="#">
+          <img src="img/footer/footer-logo.svg" alt="logo">
+        </a>
+        <div class="footer__contacts">
+          <a href="tel:88005553535" class="footer__phone">8 (800) 555-35-35</a>
+          <button type="button" class="footer__btn btn" data-toggle="modal" data-target="#modal-login">Заказать
+            звонок</button>
+          <a href="mailto:info@domain.ru " class="footer__mail">info@domain.ru </a>
+        </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/telegram.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/whatsapp.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/viber.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/instagram.svg" alt="icon">
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>
+            Копирование материалов запрещено.
+            Все права защищены. ООО “ООО”.
+          </p>
+        </div>
+      </div>
+      <div class="footer__col second">
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Покупателю</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Вопрос-ответ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Каталог</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Пиво разливное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво бутылочное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво светлое</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво тёмное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Крафтовое</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Информация</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">О компании</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Информация</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Калькуляторы</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 1</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 2</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- modals -->
+
+<!-- modal-login -->
+<div class="modal fade modal-order" id="modal-order" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-order-title">Оставить заявку</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="img/modal/close.svg" alt="icon"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table__content">
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="modal-email">E-mail или номер телефона *</label>
+              <input type="text" id="modal-email" name="e-mail">
+            </div>
+          </div><!-- /table__content-row -->
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="order-text">Сообщение</label>
+              <input type="text" id="order-text" name="text">
+            </div>
+          </div><!-- /table__content-row -->
+        </div><!-- /table__content -->
+      </div>
+      <div class="modal-footer">
+        <div class="agreement agreement-contacts">
+          <input type="checkbox" id="agreement-checkbox-contacts2" class="custom-checkbox" checked>
+          <label for="agreement-checkbox-contacts2" class="custom-checkbox-text">
+            <p>
+              Я согласен (-на) с <a href="#">политикой конфиденциальности</a> 
+            </p>               
+          </label>
+        </div>
+        <button class="modal-order__btn btn">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+	<script src="js/app.min.js"></script>
+
+</body>
+
+</html>

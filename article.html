@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Статья</title>
+</head>
+
+<body>
+	
+	<div class="wrapper">
+		<!-- Header -->
+<header class="header header-template" id="header">
+  <h1 style="position: absolute; visibility: hidden; opacity: 0;"></h1>
+  <div class="container">
+    <div class="header__top">
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="toggle">
+        <div class="top-bun"></div>
+        <div class="meat"></div>
+        <div class="bottom-bun"></div>
+      </div>
+      <div class="header__top-left">
+        <a class="logo header__logo" href="index.html"><img src="img/header-template/logo.svg" alt="logo"></a>
+      </div>
+      <div class="header__top-center">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-item_catalog active">
+              <a class="header__nav-link" href="index.html">
+                Главная
+                <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.97187 5.78989C5.26355 6.07004 5.73644 6.07004 6.02812 5.78989L10.7813 1.22462C11.0729 0.944467 11.0729 0.490261 10.7813 0.210111C10.4895 -0.0700369 10.0167 -0.0700369 9.72502 0.210111L5.49999 4.26813L1.27501 0.210111C0.983328 -0.0700369 0.510433 -0.0700369 0.218756 0.210111C-0.0729186 0.490261 -0.0729186 0.944467 0.218756 1.22462L4.97187 5.78989ZM4.75312 4.56527V5.28264H6.24687V4.56527H4.75312Z"
+                    fill="#F2B918" />
+                </svg>
+              </a>
+              <ul class="header__catalog-list">
+                <li>
+                  <a href="#">Категория 1</a>
+                </li>
+                <li>
+                  <a href="#">Категория 2</a>
+                </li>
+                <li>
+                  <a href="#">Категория 3</a>
+                </li>
+                <li>
+                  <a href="#">Категория 4</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Статьи</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Рецепты</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <button type="button" class="header__personal header__personal-btn btn d-flex d-xl-none" data-toggle="modal"
+            data-target="#modal-order">Заказать
+            звонок</button>
+        </nav>
+        <button type="button" class="header__personal btn d-none d-md-flex" data-toggle="modal"
+          data-target="#modal-order">Заказать
+          звонок</button>
+      </div>
+      <div class="header__top-right">
+        <div class="header__contacts">
+          <a href="#" class="header__address d-none d-sm-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+          <a href="tel:88005553535" class="header__phone d-none d-sm-block">8 (800) 555-35-35</a>
+          <a href="tel:88005553535" class="header__phone d-block d-sm-none"><img src="img/icons/phone-black.svg"
+              alt="icon"></a>
+        </div>
+      </div>
+
+    </div><!-- /header__top -->
+    <div class="header__bottom">
+      <div class="header__bottom-col">
+        <button class="header__btn-catalog btn">
+          <span>Каталог</span>
+          <div class="hamburger" id="toggle_1">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </div>
+        </button>
+      </div>
+      <div class="header__bottom-col">
+        <div class="header__search">
+          <div class="header__search-wrapper d-none d-md-flex">
+            <button class="header__search-btn">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <input class="d-none d-md-flex" type="search" placeholder="Введите наименование товара">
+          </div>
+
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="header__search-wrapper d-flex d-md-none">
+                <button class="header__search-btn">
+                  <img src="img/icons/search.svg" alt="icon">
+                </button>
+                <input type="search" placeholder="Введите наименование товара">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom-col">
+        <a href="#" type="button" class="header__personal btn">
+          <img src="img/icons/user.svg" alt="icon">
+          <span class="d-none d-lg-block">
+            Личный кабинет
+          </span>
+        </a>
+      </div>
+      <div class="header__bottom-col">
+        <a class="header__cart btn" href="cart.html">
+          <img src="img/icons/cart.svg" alt="icon">
+          <span class="d-none d-lg-block">Корзина</span>
+          <span class="header__cart-count">5</span>
+        </a>
+      </div>
+    </div><!-- /header__bottom -->
+    <a href="#" class="header__address d-sm-none d-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+  </div>
+</header>
+		<main class="main">
+			<!-- breadcrumbs-catalog -->
+<div class="breadcrumbs" id="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__wrapper">
+      <div class="breadcrumbs__links">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+      </div>   
+      <span>Дрожжи</span>
+    </div>
+  </div>
+</div>
+			<!-- article -->
+<section class="article" id="article">
+  <div class="container">
+    <div class="article__wrapper">
+      <div class="article__left">
+        <h2 class="article__title">Чем российские пивовары могут заменить импортный солод?</h2>
+        <div class="article__text">
+          <p>
+            Не успев толком оправиться от пандемийного кризиса, отечественные пивовары столкнулись с новой проблемой.
+            Различные санкции от стран Европы, а также США, уже существенно осложнили работу.
+            Основные трудности связаны с поставкой сырья и оборудования из-за рубежа. Официального запрета на импорт
+            пока нет. Но существенно нарушилась работа логистики, в связи с чем пивовары рискуют остаться без
+            необходимых товаров.
+            Чтобы не останавливать производство, пивовары смещают вектор внимания
+            на отечественные компании, занимающиеся изготовлением сырья для пивоварения. Например, «Грейнрус» производит
+            продукцию
+            под брендом «Курский солод». Ассортимент достаточно большой — сейчас представлено 20 видов солодов.
+          </p>
+          <h3>
+            География
+          </h3>
+          <p>
+            Солодовня «Курский Солод» располагается в Центрально-Черноземном районе Курской области. Российский бренд
+            хорошо известен среди пивоваров.
+            Производство представлено двумя предприятиями в Курской и Ярославской областях. Их мощность – 125 000 и 10
+            000 тонн соответственно.
+            В прошлом году «Курский солод» запустил производство ржаного ферментированного и неферментированного солодов
+            в Ярославской области.
+          </p>
+          <h3>
+            Производство
+          </h3>
+          <p>
+            В год «Курский солод» производит 130 тысяч тонн светлого солода. Мощность для хранения зерновых оценивается
+            в 46 тысяч тонн.
+            А мощность цеха обжарки составляет 6,5 тысяч тонн.
+            «Курский солод» имеет две независимые очереди, позволяющие одновременно производить разные типы солода без
+            риска смешивания.
+          </p>
+          <h3>
+            Качество
+          </h3>
+          <p>
+            На базе «Курского солода» работает лаборатория, осуществляющая контроль качества на всех этапах
+            производства: от поступления зерна
+            на предприятие и до момента отгрузки солода покупателю.
+            В «Грейнрус» рассказали, что параметры качества зерна контролируются в каждой поступающей машине. Благодаря
+            этому «Курский солод» формирует наиболее однородные партии по сортам ячменя и по показателям качества.
+            На ежедневной основе осуществляются анализы в процессе замочки ячменя, проращивания, сушки. Это позволяет
+            точно определять качество выработанного солода.
+          </p>
+        </div>
+        <a href="articles.html" class="article__btn btn">Вернуться в ленту статей</a>
+      </div>
+      <div class="article__right">
+        <div class="article__total">
+          <div class="article__total-item">
+            <div class="article__total-title">
+              3 тыс.
+            </div>
+            <div class="article__total-name">
+              Просмотров
+            </div>
+          </div>
+          <div class="article__total-item">
+            <div class="article__total-title">
+              3.7 из 4
+            </div>
+            <div class="article__total-name">
+              Оценка
+            </div>
+          </div>
+        </div><!-- /article__total -->
+        <div class="article__related related-articles">
+          <div class="related-articles__title">
+            Похожие статьи
+          </div>
+          <ul class="related-articles__list">
+            <li class="related-articles__item">
+              <div class="related-articles__item-title">
+                <a href="#">Больше любимых вкусов и ароматов</a>
+              </div>
+              <div class="related-articles__item-category">
+                <span>Категория:</span>
+                Ингредиенты в пивоварении
+              </div>
+              <a href="#" class="related-articles__item-link btn">
+                Читать
+              </a>
+            </li>
+            <li class="related-articles__item">
+              <div class="related-articles__item-title">
+                <a href="#">Больше любимых вкусов и ароматов</a>
+              </div>
+              <div class="related-articles__item-category">
+                <span>Категория:</span>
+                Ингредиенты в пивоварении
+              </div>
+              <a href="#" class="related-articles__item-link btn">
+                Читать
+              </a>
+            </li>
+            <li class="related-articles__item">
+              <div class="related-articles__item-title">
+                <a href="#">Больше любимых вкусов и ароматов</a>
+              </div>
+              <div class="related-articles__item-category">
+                <span>Категория:</span>
+                Ингредиенты в пивоварении
+              </div>
+              <a href="#" class="related-articles__item-link btn">
+                Читать
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div><!-- /article__wrapper -->
+    <div class="article__comments">
+      <form action="#" class="article__comments-form comments-form">
+        <div class="comments-form__title">
+          Всего комментариев: 19
+        </div>
+        <textarea name="comments-textarea" id="comments-textarea" cols="30" rows="10"
+          placeholder="Написать комментарий..."></textarea>
+        <button class="comments-form__btn btn">Отправить</button>
+      </form>
+      <div class="article__comments-register comments-register">
+        <div class="comments-register__title">
+          Оставлять комментарии могут только зарегестрированные пользователи:
+        </div>
+        <div class="comments-register__btns">
+          <a class="comments-register__btn btn" href="#">Регистрация</a>
+          <a class="comments-register__btn btn" href="#">Вход</a>
+        </div>
+      </div>
+      <ul class="article__comments-list">
+        <li class="article__comments-item comments-item">
+          <div class="comments-item__left">
+            <div class="comments-item__img">
+              <img src="img/articles/person.jpg" alt="person">
+            </div>
+            <div class="comments-item__content">
+              <div class="comments-item__content-top">
+                <div class="comments-item__title">Алёша Попович</div>
+                <div class="comments-item__date">
+                  24.08.2022
+                </div>
+              </div>
+              <p class="comments-item__text">
+                Отличные рецепты, а дрожжи заказал непосредственно у производителя?
+              </p>
+            </div>
+          </div>
+          <div class="comments-item__right">
+            <button class="comments-item__btn btn">Ответить</button>
+          </div>
+        </li>
+      </ul><!-- /article__comments-list -->
+      <ul class="article__comments-list inside">
+        <li class="article__comments-item comments-item">
+          <div class="comments-item__left">
+            <div class="comments-item__img">
+              <img src="img/articles/person.jpg" alt="person">
+            </div>
+            <div class="comments-item__content">
+              <div class="comments-item__content-top">
+                <div class="comments-item__title">Алёша Попович</div>
+                <div class="comments-item__date">
+                  24.08.2022
+                </div>
+              </div>
+              <p class="comments-item__text">
+                Отличные рецепты, а дрожжи заказал непосредственно у производителя?
+              </p>
+            </div>
+          </div>
+          <div class="comments-item__right">
+            <button class="comments-item__btn btn">Ответить</button>
+          </div>
+        </li>
+        <li class="article__comments-item comments-item">
+          <div class="comments-item__left">
+            <div class="comments-item__img">
+              <img src="img/articles/person.jpg" alt="person">
+            </div>
+            <div class="comments-item__content">
+              <div class="comments-item__content-top">
+                <div class="comments-item__title">Алёша Попович</div>
+                <div class="comments-item__date">
+                  24.08.2022
+                </div>
+              </div>
+              <p class="comments-item__text">
+                Отличные рецепты, а дрожжи заказал непосредственно у производителя?
+              </p>
+            </div>
+          </div>
+          <div class="comments-item__right">
+            <button class="comments-item__btn btn">Ответить</button>
+          </div>
+        </li>
+      </ul><!-- /article__comments-list -->
+    </div>
+  </div>
+</section>
+			<!-- consult -->
+<section class="consult" id="consult">
+  <div class="container">
+    <div class="consult__left">
+      <div class="consult__title">
+        Нужна консультация?
+      </div>
+    </div>
+    <div class="consult__right">
+      <div class="consult__text">
+        <p>
+          Поищем необходимый вам товар. Подберем выгодный способ доставки.
+        </p>
+        <p>
+          Проконсультируем, как работать с устройством.
+        </p>
+        <p>
+          Расскажем о каждом товаре более подробно.
+        </p>
+      </div><!-- /consult__text -->
+      <div class="consult__contacts">
+        <form class="consult__form" action="#">
+          <input type="tel" placeholder="+7 (ххх) ххх-хх-хх">
+          <button class="consult__form-btn"><img src="img/consult/arrow.svg" alt="icon"></button>
+        </form>
+      </div>
+      <ul class="social__list">
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/telegram.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/whatsapp.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/viber.svg" alt="icon">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#">
+            <img src="img/footer/instagram.svg" alt="icon">
+          </a>
+        </li>
+      </ul>
+    </div><!-- /consult__right -->
+  </div>
+</section>
+
+		</main>
+		<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col first">
+        <a class="footer__logo logo" href="#">
+          <img src="img/footer/footer-logo.svg" alt="logo">
+        </a>
+        <div class="footer__contacts">
+          <a href="tel:88005553535" class="footer__phone">8 (800) 555-35-35</a>
+          <button type="button" class="footer__btn btn" data-toggle="modal" data-target="#modal-login">Заказать
+            звонок</button>
+          <a href="mailto:info@domain.ru " class="footer__mail">info@domain.ru </a>
+        </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/telegram.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/whatsapp.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/viber.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/instagram.svg" alt="icon">
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>
+            Копирование материалов запрещено.
+            Все права защищены. ООО “ООО”.
+          </p>
+        </div>
+      </div>
+      <div class="footer__col second">
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Покупателю</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Вопрос-ответ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Каталог</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Пиво разливное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво бутылочное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво светлое</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво тёмное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Крафтовое</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Информация</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">О компании</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Информация</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Калькуляторы</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 1</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 2</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- modals -->
+
+<!-- modal-login -->
+<div class="modal fade modal-order" id="modal-order" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-order-title">Оставить заявку</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="img/modal/close.svg" alt="icon"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table__content">
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="modal-email">E-mail или номер телефона *</label>
+              <input type="text" id="modal-email" name="e-mail">
+            </div>
+          </div><!-- /table__content-row -->
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="order-text">Сообщение</label>
+              <input type="text" id="order-text" name="text">
+            </div>
+          </div><!-- /table__content-row -->
+        </div><!-- /table__content -->
+      </div>
+      <div class="modal-footer">
+        <div class="agreement agreement-contacts">
+          <input type="checkbox" id="agreement-checkbox-contacts2" class="custom-checkbox" checked>
+          <label for="agreement-checkbox-contacts2" class="custom-checkbox-text">
+            <p>
+              Я согласен (-на) с <a href="#">политикой конфиденциальности</a> 
+            </p>               
+          </label>
+        </div>
+        <button class="modal-order__btn btn">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+	<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+	<script src="js/app.min.js"></script>
+	
+</body>
+
+</html>
+
+
+
+

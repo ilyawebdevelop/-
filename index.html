@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Главная</title>
+</head>
+
+<body>
+	
+	<div class="wrapper">
+		<!-- Header -->
+<header class="header" id="header">
+  <h1 style="position: absolute; visibility: hidden; opacity: 0;"></h1>
+  <div class="container">
+    <div class="header__top">
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="toggle">
+        <div class="top-bun"></div>
+        <div class="meat"></div>
+        <div class="bottom-bun"></div>
+      </div>
+      <div class="header__top-left">
+        <a class="logo header__logo" href="index.html"><img src="img/header/logo-main.svg" alt="logo"></a>
+      </div>
+      <div class="header__top-center">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-item_catalog active">
+              <a class="header__nav-link" href="index.html">
+                Главная
+                <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.97187 5.78989C5.26355 6.07004 5.73644 6.07004 6.02812 5.78989L10.7813 1.22462C11.0729 0.944467 11.0729 0.490261 10.7813 0.210111C10.4895 -0.0700369 10.0167 -0.0700369 9.72502 0.210111L5.49999 4.26813L1.27501 0.210111C0.983328 -0.0700369 0.510433 -0.0700369 0.218756 0.210111C-0.0729186 0.490261 -0.0729186 0.944467 0.218756 1.22462L4.97187 5.78989ZM4.75312 4.56527V5.28264H6.24687V4.56527H4.75312Z"
+                    fill="#F2B918" />
+                </svg>
+              </a>
+              <ul class="header__catalog-list">
+                <li>
+                  <a href="#">Категория 1</a>
+                </li>
+                <li>
+                  <a href="#">Категория 2</a>
+                </li>
+                <li>
+                  <a href="#">Категория 3</a>
+                </li>
+                <li>
+                  <a href="#">Категория 4</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Статьи</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Рецепты</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <button type="button" class="header__personal header__personal-btn btn d-flex d-xl-none" data-toggle="modal"
+            data-target="#modal-order">Заказать
+            звонок</button>
+        </nav>
+        <button type="button" class="header__personal btn d-none d-md-flex" data-toggle="modal"
+          data-target="#modal-order">Заказать
+          звонок</button>
+      </div>
+      <div class="header__top-right">
+        <div class="header__contacts">
+          <a href="#" class="header__address d-none d-sm-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+          <a href="tel:88005553535" class="header__phone d-none d-sm-block">8 (800) 555-35-35</a>
+          <a href="tel:88005553535" class="header__phone d-block d-sm-none"><img src="img/icons/phone.svg"
+              alt="icon"></a>
+        </div>
+      </div>
+
+    </div><!-- /header__top -->
+    <div class="header__bottom">
+      <div class="header__bottom-col">
+        <button class="header__btn-catalog btn">
+          <span>Каталог</span>
+          <div class="hamburger" id="toggle_1">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </div>
+        </button>
+      </div>
+      <div class="header__bottom-col">
+        <div class="header__search">
+          <div class="header__search-wrapper d-none d-md-flex">
+            <button class="header__search-btn">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <input class="d-none d-md-flex" type="search" placeholder="Введите наименование товара">
+          </div>
+
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="header__search-wrapper d-flex d-md-none">
+                <button class="header__search-btn">
+                  <img src="img/icons/search.svg" alt="icon">
+                </button>
+                <input type="search" placeholder="Введите наименование товара">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom-col">
+        <a href="#" type="button" class="header__personal btn">
+          <img src="img/icons/user.svg" alt="icon">
+          <span class="d-none d-lg-block">
+            Личный кабинет
+          </span>
+        </a>
+      </div>
+      <div class="header__bottom-col">
+        <a class="header__cart btn" href="cart.html">
+          <img src="img/icons/cart.svg" alt="icon">
+          <span class="d-none d-lg-block">Корзина</span>
+          <span class="header__cart-count">5</span>
+        </a>
+      </div>
+    </div><!-- /header__bottom -->
+    <a href="#" class="header__address d-sm-none d-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+  </div>
+</header>
+		<main class="main">
+			<!-- intro -->
+<section class="intro" id="intro">
+  <div class="container">
+    <div class="intro__top">     
+      <div class="intro__top-image">
+        <img src="img/intro/photo-1.png" alt="photo">
+      </div> 
+      <div class="intro__offer">
+        <div class="intro__subtitle">
+          <img src="img/intro/title-image.svg" alt="title">
+        </div>
+        <div class="intro__title">
+          35 стран мира
+        </div>
+      </div><!-- /intro__offer -->
+      <nav class="intro__nav">
+        <ul class="intro__nav-list">
+          <li class="intro__nav-item">
+            <a href="#">
+              Выгодная доставка
+            </a>
+          </li>
+          <li class="intro__nav-item">
+            <a href="#">
+              Добавить свой рецепт
+            </a>
+          </li>
+          <li class="intro__nav-item">
+            <a href="#">
+              Статьи
+            </a>
+          </li>
+          <li class="intro__nav-item">
+            <a href="#">
+              Интернет-магазин
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div><!-- /intro__top -->
+    <div class="intro__bottom">
+      <div class="intro__bottom-image">
+        <img src="img/intro/photo-2.png" alt="image">
+      </div>
+      <div class="intro__bottom-image">
+        <img src="img/intro/photo-3.png" alt="image">
+      </div>
+    </div><!-- /intro__bottom -->
+  </div>
+</section>
+			<!-- connect -->
+<section class="connect" id="connect">
+  <div class="container">
+    <div class="connect__wrapper">
+      <div class="connect__left">
+        <div class="connect__title main-title">
+          Присоединяйтесь
+          к нам!
+          <span class="connect__subtitle">О компании</span>
+        </div>   
+        <div class="connect__image">
+          <img src="img/connect/photo-1.png" alt="">
+        </div>       
+      </div>
+      <div class="connect__right">
+        <ul class="connect__list">
+          <li class="connect__item">
+            <div class="connect__item-top">
+              3 тыс.
+            </div>
+            <div class="connect__item-bottom">
+              Рецептов
+              опубликовано
+            </div>
+          </li>
+          <li class="connect__item">
+            <div class="connect__item-top">
+              1 тыс.
+            </div>
+            <div class="connect__item-bottom">
+              Пользователей
+              онлайн
+            </div>
+          </li>
+          <li class="connect__item">
+            <div class="connect__item-top">
+              6 тыс.
+            </div>
+            <div class="connect__item-bottom">
+              Пользователей
+              зарегистрировано
+            </div>
+          </li>
+        </ul>
+        <div class="connect__text-wrapper">
+          <div class="connect__text">
+            <p>
+              Уважаемые покупатели, наши магазины предлагают
+              Вам огромный выбор отечественных и оригинальных импортных сортов пива. Здесь, на сайте, мы расскажем Вам о
+              производителях пива, о всемирно известных марках и новых крафтовых пивоварнях которые несомненно заслуживают
+              внимания.
+            </p>
+            <p>
+              Поможем разобраться в бесчисленных сортах
+              и разновидностях пенных напитков, особенностях приготовления и технологических нюансах.
+            </p>
+          </div>
+          <div class="connect__text-img_1"><img src="img/connect/image-1.svg" alt="icon"></div>
+          <div class="connect__text-img_2"><img src="img/connect/image-2.svg" alt="icon"></div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+</section>
+			<!-- popular -->
+<section class="popular" id="popular">
+  <div class="container">
+    <div class="popular__left">
+      <div class="popular__title main-title">
+        Популярные
+        категории
+        <div class="popular__title-arrow">
+          <img src="img/popular/title-arrow.svg" alt="arrow">
+        </div>
+        <div class="popular__title-light">
+          <img src="img/popular/title-light.svg" alt="light">
+        </div>
+        <div class="popular__title-power">
+          <img src="img/popular/title-power.svg" alt="power">
+        </div>
+      </div>
+    </div>
+    <div class="popular__right">
+      <ul class="popular__list">
+        <li class="popular__item">
+          <div class="popular__item-img"><img src="img/popular/popular-1.svg" alt="icon"></div>
+          <div class="popular__item-title">Пивоварни</div>
+          <a href="#"></a>
+        </li>
+        <li class="popular__item">
+          <div class="popular__item-img"><img src="img/popular/popular-2.svg" alt="icon"></div>
+          <div class="popular__item-title">Оборудование</div>
+          <a href="#"></a>
+        </li>
+        <li class="popular__item">
+          <div class="popular__item-img"><img src="img/popular/popular-3.svg" alt="icon"></div>
+          <div class="popular__item-title">Дрожжи</div>
+          <a href="#"></a>
+        </li>
+        <li class="popular__item">
+          <div class="popular__item-img"><img src="img/popular/popular-4.svg" alt="icon"></div>
+          <div class="popular__item-title">Добавки</div>
+          <a href="#"></a>
+        </li>
+        <li class="popular__item">
+          <div class="popular__item-img"><img src="img/popular/popular-5.svg" alt="icon"></div>
+          <div class="popular__item-title">Хмель</div>
+          <a href="#"></a>
+        </li>
+        <li class="popular__item">
+          <div class="popular__item-img"><img src="img/popular/popular-6.svg" alt="icon"></div>
+          <div class="popular__item-title">Сбраживание</div>
+          <a href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+			<!-- receipt -->
+<section class="receipt" id="receipt">
+  <div class="container">
+    <div class="receipt__title-row category-row-title">
+      <div class="receipt__title main-title">
+        <span>Популярные рецепты</span>
+        <img src="img/receipt/arrow-lg.svg" alt="icon">        
+      </div>
+      <a href="#" class="receipt__btn category-btn btn">
+        Создать свой рецепт
+      </a>
+    </div>
+    <ul class="receipt__list">
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-1.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-2.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-3.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-1.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-2.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-3.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-1.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-2.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-3.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-1.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-2.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+      <li class="receipt__item">
+        <div class="receipt__item-img">
+          <img src="img/receipt/receipt-3.png" alt="image">
+        </div>
+        <div class="receipt__item-content">
+          <div class="receipt__item-title">Dr Smurto's Golden Ale</div>
+          <div class="receipt__item-subtitle">Блонд эль от Пивовар</div>
+          <div class="receipt-param">
+            <ul class="receipt-param__list">
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Крепость:</div>
+                <div class="receipt-param__item-text">4.900 %</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Цветность:</div>
+                <div class="receipt-param__item-text">7.300 SRM</div>
+              </li>
+              <li class="receipt-param__item">
+                <div class="receipt-param__item-title">Горечь:</div>
+                <div class="receipt-param__item-text">32.700 IBUs</div>
+              </li>       
+            </ul>
+          </div>
+        </div><!-- /receipt__item-content -->
+        <a href="#"></a>
+      </li><!-- /receipt__item -->
+    </ul>
+  </div>
+</section>
+			<!-- benefits -->
+<section class="benefits" id="benefits">
+  <div class="container">
+    <div class="benefits__title-row category-row-title">
+      <div class="benefits__title main-title">
+        Выгодные предложения
+      </div>
+      <a href="#" class="benefits__btn category-btn btn">
+        Все акции
+      </a>
+    </div>
+    <ul class="benefits__list category-row">
+      <li class="benefits__item category-item">
+        <div class="benefits__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+      <li class="benefits__item category-item">
+        <div class="benefits__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+      <li class="benefits__item category-item">
+        <div class="benefits__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+      <li class="benefits__item category-item">
+        <div class="benefits__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+    </ul>
+  </div>
+</section>
+			<!-- news -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="news__title-row category-row-title">
+      <div class="news__title main-title">
+        новости
+      </div>
+      <a href="#" class="news__btn category-btn btn">
+        Все новости
+      </a>
+    </div>
+    <ul class="news__list category-row">
+      <li class="news__item category-item">
+        <div class="news__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+      <li class="news__item category-item">
+        <div class="news__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+      <li class="news__item category-item">
+        <div class="news__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+      <li class="news__item category-item">
+        <div class="news__item-img category-item__img">
+          <img src="img/category/beer.jpg" alt="image">
+          <a href="#"></a>
+        </div>
+        <div class="category-item__bottom">
+          <div class="category-item__date">
+            24 августа 2022
+          </div>
+          <div class="category-item__title">
+            Лучшая цена на разливное пиво
+          </div>
+          <div class="category-item__btn btn category-btn">Подробнее</div>
+        </div>        
+      </li>
+    </ul>
+  </div>
+</section>
+			<!-- articles -->
+<section class="articles" id="articles">
+  <div class="container">
+    <div class="articles__title-row category-row-title">
+      <div class="articles__title main-title">
+        Статьи
+      </div>
+      <a href="#" class="articles__btn category-btn btn">
+        Все статьи
+      </a>
+    </div>
+  </div>
+  <div class="articles__wrapper">
+    <div class="container">
+      <ul class="articles__list category-row">
+        <li class="articles__item category-item">
+          <div class="articles__item-img category-item__img">
+            <img src="img/category/beer.jpg" alt="image">
+            <a href="#"></a>
+          </div>
+          <div class="category-item__bottom">
+            <div class="category-item__date">
+              24 августа 2022
+            </div>
+            <div class="category-item__title">
+              Лучшая цена на разливное пиво Лучшая цена на разливное пиво
+            </div>
+            <div class="category-item__btn btn category-btn">Подробнее</div>
+          </div>
+        </li>
+        <li class="articles__item category-item">
+          <div class="articles__item-img category-item__img">
+            <img src="img/category/beer.jpg" alt="image">
+            <a href="#"></a>
+          </div>
+          <div class="category-item__bottom">
+            <div class="category-item__date">
+              24 августа 2022
+            </div>
+            <div class="category-item__title">
+              Лучшая цена на разливное пиво
+            </div>
+            <div class="category-item__btn btn category-btn">Подробнее</div>
+          </div>
+        </li>
+        <li class="articles__item category-item">
+          <div class="articles__item-img category-item__img">
+            <img src="img/category/beer.jpg" alt="image">
+            <a href="#"></a>
+          </div>
+          <div class="category-item__bottom">
+            <div class="category-item__date">
+              24 августа 2022
+            </div>
+            <div class="category-item__title">
+              Лучшая цена на разливное пиво
+            </div>
+            <div class="category-item__btn btn category-btn">Подробнее</div>
+          </div>
+        </li>
+        <li class="articles__item category-item">
+          <div class="articles__item-img category-item__img">
+            <img src="img/category/beer.jpg" alt="image">
+            <a href="#"></a>
+          </div>
+          <div class="category-item__bottom">
+            <div class="category-item__date">
+              24 августа 2022
+            </div>
+            <div class="category-item__title">
+              Лучшая цена на разливное пиво
+            </div>
+            <div class="category-item__btn btn category-btn">Подробнее</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+		</main>
+		<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col first">
+        <a class="footer__logo logo" href="#">
+          <img src="img/footer/footer-logo.svg" alt="logo">
+        </a>
+        <div class="footer__contacts">
+          <a href="tel:88005553535" class="footer__phone">8 (800) 555-35-35</a>
+          <button type="button" class="footer__btn btn" data-toggle="modal" data-target="#modal-login">Заказать
+            звонок</button>
+          <a href="mailto:info@domain.ru " class="footer__mail">info@domain.ru </a>
+        </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/telegram.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/whatsapp.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/viber.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/instagram.svg" alt="icon">
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>
+            Копирование материалов запрещено.
+            Все права защищены. ООО “ООО”.
+          </p>
+        </div>
+      </div>
+      <div class="footer__col second">
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Покупателю</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Вопрос-ответ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Каталог</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Пиво разливное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво бутылочное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво светлое</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво тёмное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Крафтовое</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Информация</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">О компании</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Информация</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Калькуляторы</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 1</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 2</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- modals -->
+
+<!-- modal-login -->
+<div class="modal fade modal-order" id="modal-order" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-order-title">Оставить заявку</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="img/modal/close.svg" alt="icon"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table__content">
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="modal-email">E-mail или номер телефона *</label>
+              <input type="text" id="modal-email" name="e-mail">
+            </div>
+          </div><!-- /table__content-row -->
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="order-text">Сообщение</label>
+              <input type="text" id="order-text" name="text">
+            </div>
+          </div><!-- /table__content-row -->
+        </div><!-- /table__content -->
+      </div>
+      <div class="modal-footer">
+        <div class="agreement agreement-contacts">
+          <input type="checkbox" id="agreement-checkbox-contacts2" class="custom-checkbox" checked>
+          <label for="agreement-checkbox-contacts2" class="custom-checkbox-text">
+            <p>
+              Я согласен (-на) с <a href="#">политикой конфиденциальности</a> 
+            </p>               
+          </label>
+        </div>
+        <button class="modal-order__btn btn">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+	<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+	<script src="js/app.min.js"></script>
+	
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,10 @@
+<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_126_794" fill="white">
+<rect width="19" height="8.76923" rx="1"/>
+</mask>
+<rect width="19" height="8.76923" rx="1" stroke="#F2B918" stroke-width="2.4" mask="url(#path-1-inside-1_126_794)"/>
+<mask id="path-2-inside-2_126_794" fill="white">
+<rect y="10.2308" width="19" height="8.76923" rx="1"/>
+</mask>
+<rect y="10.2308" width="19" height="8.76923" rx="1" stroke="#F2B918" stroke-width="2.4" mask="url(#path-2-inside-2_126_794)"/>
+</svg>

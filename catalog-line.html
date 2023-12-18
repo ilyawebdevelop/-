@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Каталог</title>
+</head>
+
+<body>
+	
+	<div class="wrapper">
+		<!-- Header -->
+<header class="header header-template" id="header">
+  <h1 style="position: absolute; visibility: hidden; opacity: 0;"></h1>
+  <div class="container">
+    <div class="header__top">
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="toggle">
+        <div class="top-bun"></div>
+        <div class="meat"></div>
+        <div class="bottom-bun"></div>
+      </div>
+      <div class="header__top-left">
+        <a class="logo header__logo" href="index.html"><img src="img/header-template/logo.svg" alt="logo"></a>
+      </div>
+      <div class="header__top-center">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-item_catalog active">
+              <a class="header__nav-link" href="index.html">
+                Главная
+                <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4.97187 5.78989C5.26355 6.07004 5.73644 6.07004 6.02812 5.78989L10.7813 1.22462C11.0729 0.944467 11.0729 0.490261 10.7813 0.210111C10.4895 -0.0700369 10.0167 -0.0700369 9.72502 0.210111L5.49999 4.26813L1.27501 0.210111C0.983328 -0.0700369 0.510433 -0.0700369 0.218756 0.210111C-0.0729186 0.490261 -0.0729186 0.944467 0.218756 1.22462L4.97187 5.78989ZM4.75312 4.56527V5.28264H6.24687V4.56527H4.75312Z"
+                    fill="#F2B918" />
+                </svg>
+              </a>
+              <ul class="header__catalog-list">
+                <li>
+                  <a href="#">Категория 1</a>
+                </li>
+                <li>
+                  <a href="#">Категория 2</a>
+                </li>
+                <li>
+                  <a href="#">Категория 3</a>
+                </li>
+                <li>
+                  <a href="#">Категория 4</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Статьи</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Рецепты</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <button type="button" class="header__personal header__personal-btn btn d-flex d-xl-none" data-toggle="modal"
+            data-target="#modal-order">Заказать
+            звонок</button>
+        </nav>
+        <button type="button" class="header__personal btn d-none d-md-flex" data-toggle="modal"
+          data-target="#modal-order">Заказать
+          звонок</button>
+      </div>
+      <div class="header__top-right">
+        <div class="header__contacts">
+          <a href="#" class="header__address d-none d-sm-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+          <a href="tel:88005553535" class="header__phone d-none d-sm-block">8 (800) 555-35-35</a>
+          <a href="tel:88005553535" class="header__phone d-block d-sm-none"><img src="img/icons/phone-black.svg"
+              alt="icon"></a>
+        </div>
+      </div>
+
+    </div><!-- /header__top -->
+    <div class="header__bottom">
+      <div class="header__bottom-col">
+        <button class="header__btn-catalog btn">
+          <span>Каталог</span>
+          <div class="hamburger" id="toggle_1">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </div>
+        </button>
+      </div>
+      <div class="header__bottom-col">
+        <div class="header__search">
+          <div class="header__search-wrapper d-none d-md-flex">
+            <button class="header__search-btn">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <input class="d-none d-md-flex" type="search" placeholder="Введите наименование товара">
+          </div>
+
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+              <img src="img/icons/search.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="header__search-wrapper d-flex d-md-none">
+                <button class="header__search-btn">
+                  <img src="img/icons/search.svg" alt="icon">
+                </button>
+                <input type="search" placeholder="Введите наименование товара">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom-col">
+        <a href="#" type="button" class="header__personal btn">
+          <img src="img/icons/user.svg" alt="icon">
+          <span class="d-none d-lg-block">
+            Личный кабинет
+          </span>
+        </a>
+      </div>
+      <div class="header__bottom-col">
+        <a class="header__cart btn" href="cart.html">
+          <img src="img/icons/cart.svg" alt="icon">
+          <span class="d-none d-lg-block">Корзина</span>
+          <span class="header__cart-count">5</span>
+        </a>
+      </div>
+    </div><!-- /header__bottom -->
+    <a href="#" class="header__address d-sm-none d-block" target="_blank">г. Казань, ул. Пушкина, д. 7А</a>
+  </div>
+</header>
+		<main class="main">
+			<!-- breadcrumbs-catalog -->
+<div class="breadcrumbs" id="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__wrapper">
+      <div class="breadcrumbs__links">
+        <a href="catalog.html">Главная</a>
+        <a href="#">Каталог</a>
+      </div>   
+      <span>Дрожжи</span>
+    </div>
+    <div class="breadcrumbs__name">
+      <span>Дрожжи</span>
+      <span>123</span>
+    </div>
+  </div>
+</div>
+			<!-- catalog -->
+<section class="catalog" id="catalog">
+  <h1 style="visibility: hidden; opacity: 0; position: absolute;"></h1>
+  <div class="container">
+    <div class="catalog__wrapper">
+      <div class="sidebar-wrapper">
+
+
+  <!-- catalog-sidebar -->
+  <button class="catalog-sidebar__btn-mobile btn d-block d-md-none">Фильтр</button>
+  <div class="catalog-sidebar" id="catalog-sidebar">
+    <div class="catalog-sidebar__params">
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_1">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Оборудование</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-1_1">
+              <label for="checkbox-1_1">
+                <span class="catalog-param__checkbox-text">Оборудование 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-1_2">
+              <label for="checkbox-1_2">
+                <span class="catalog-param__checkbox-text">Оборудование 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-1_3">
+              <label for="checkbox-1_3">
+                <span class="catalog-param__checkbox-text">Оборудование 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_2 active">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Дрожжи</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-2_1">
+              <label for="checkbox-2_1">
+                <span class="catalog-param__checkbox-text">Позиция 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-2_2">
+              <label for="checkbox-2_2">
+                <span class="catalog-param__checkbox-text">Позиция 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-2_3">
+              <label for="checkbox-2_3">
+                <span class="catalog-param__checkbox-text">Позиция 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_3">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Сбраживаемое</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-3_1">
+              <label for="checkbox-3_1">
+                <span class="catalog-param__checkbox-text">Позиция 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-3_2">
+              <label for="checkbox-3_2">
+                <span class="catalog-param__checkbox-text">Позиция 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-3_3">
+              <label for="checkbox-3_3">
+                <span class="catalog-param__checkbox-text">Позиция 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_4">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Хмель</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-4_1">
+              <label for="checkbox-4_1">
+                <span class="catalog-param__checkbox-text">Позиция 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-4_2">
+              <label for="checkbox-4_2">
+                <span class="catalog-param__checkbox-text">Позиция 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-4_3">
+              <label for="checkbox-4_3">
+                <span class="catalog-param__checkbox-text">Позиция 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_5">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Пищевые добавки</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-5_1">
+              <label for="checkbox-5_1">
+                <span class="catalog-param__checkbox-text">Позиция 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-5_2">
+              <label for="checkbox-5_2">
+                <span class="catalog-param__checkbox-text">Позиция 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-5_3">
+              <label for="checkbox-5_3">
+                <span class="catalog-param__checkbox-text">Позиция 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_6">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Все товары</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-6_1">
+              <label for="checkbox-6_1">
+                <span class="catalog-param__checkbox-text">Позиция 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-6_2">
+              <label for="checkbox-6_2">
+                <span class="catalog-param__checkbox-text">Позиция 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-6_3">
+              <label for="checkbox-6_3">
+                <span class="catalog-param__checkbox-text">Позиция 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_price active">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Цена:</div>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__price-inputs">
+            <div class="catalog-param__price-input">
+              <span>от</span>
+              <input type="number">
+            </div>
+            <div class="catalog-param__price-input">
+              <span>до</span>
+              <input type="number">
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_7 active">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Страна</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-7_1">
+              <label for="checkbox-7_1">
+                <span class="catalog-param__checkbox-text">Россия</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-7_2">
+              <label for="checkbox-7_2">
+                <span class="catalog-param__checkbox-text">Италия</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-7_3">
+              <label for="checkbox-7_3">
+                <span class="catalog-param__checkbox-text">Китай</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_8">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Производитель</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-8_1">
+              <label for="checkbox-8_1">
+                <span class="catalog-param__checkbox-text">Россия</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-8_2">
+              <label for="checkbox-8_2">
+                <span class="catalog-param__checkbox-text">Италия</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-8_3">
+              <label for="checkbox-8_3">
+                <span class="catalog-param__checkbox-text">Китай</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+      <div class="catalog-sidebar__param catalog-param catalog-param_category_9">
+        <div class="catalog-param__head">
+          <div class="catalog-param__head-title">Тип</div>
+          <button class="catalog-param__head-btn"><img src="img/sidebar/arrow.svg" alt="icon"></button>
+        </div>
+        <div class="catalog-param__content">
+          <div class="catalog-param__checkboxes">
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-9_1">
+              <label for="checkbox-9_1">
+                <span class="catalog-param__checkbox-text">Позиция 1</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-9_2">
+              <label for="checkbox-9_2">
+                <span class="catalog-param__checkbox-text">Позиция 2</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+            <div class="catalog-param__checkbox">
+              <input type="checkbox" id="checkbox-9_3">
+              <label for="checkbox-9_3">
+                <span class="catalog-param__checkbox-text">Позиция 3</span>
+                <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /catalog-sidebar__param -->
+    </div><!-- /catalog-sidebar__params -->
+    <button class="catalog-sidebar__apply btn">Применить</button>
+
+
+  </div>
+  <div class="catalog-sidebar quest">
+    <div class="catalog-sidebar__title">
+      У вас есть вопрос?
+    </div>
+    <div class="catalog-sidebar__text">
+      <p>
+        Давайте обсудим это по телефону?
+      </p>
+      <p>
+        Наш разговор займет не более
+        5 минут.
+      </p>
+    </div>
+    <form action="#" class="catalog-sidebar__form">
+      <div class="catalog-sidebar__input-wrapper">
+        <label for="input-name">
+          Ваше имя
+        </label>
+        <input type="text" id="input-name">
+      </div>
+      <div class="catalog-sidebar__input-wrapper">
+        <label for="input-phone">
+          Номер телефона
+        </label>
+        <input type="tel" id="input-phone">
+      </div>
+      <button class="catalog-sidebar__form-btn btn">
+        Заказать звонок
+      </button>
+      <div class="agreement">
+        <div class="catalog-param__checkbox">
+          <input type="checkbox" id="checkbox-10_1" checked>
+          <label for="checkbox-10_1">            
+            <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+            <span class="catalog-param__checkbox-text">Согласен на обработку персональных данных</span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+      <!-- catalog-content -->
+<div class="catalog-content" id="catalog-content">
+  <div class="sort">
+    <div class="sort__link">
+      <a href="#">
+        Сначала дешевле
+      </a>
+      <span><img src="img/icons/arrows.svg" alt="icon"></span>
+    </div>
+    <div class="sort__type">
+      <a class="sort__btn active" href="catalog-line.html">
+        <img src="img/sort/sort-1.svg" alt="icon">
+      </a>
+      <a class="sort__btn" href="catalog.html">
+        <img src="img/sort/sort-2.svg" alt="icon">
+      </a>
+    </div>
+  </div>
+  <div class="catalog-line">
+    <div class="catalog-line__table">
+      <div class="catalog-line__head">
+        <div class="catalog-line__head-col col_1">
+          <button href="#" class="d-flex align-items-center"> Название <span><img
+                src="img/catalog/arrow-head-table.svg" alt="icon"></span></button>
+        </div>
+        <div class="catalog-line__head-col">
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Производитель
+              <img src="img/catalog/arrow-bottom.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="catalog-param">
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-1_1">
+                  <label for="param-1_1">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Производитель</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-1_2">
+                  <label for="param-1_2">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Производитель</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-1_3">
+                  <label for="param-1_3">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Производитель</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-1_4">
+                  <label for="param-1_4">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Производитель</span>
+                  </label>
+                </div>
+              </div>
+              <button class="catalog-sidebar__apply btn">Применить</button>
+            </div>
+          </div><!-- /dropdown -->
+        </div>
+        <div class="catalog-line__head-col">
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Горечь
+              <img src="img/catalog/arrow-bottom.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="catalog-param">
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-2_1">
+                  <label for="param-2_1">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Горечь</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-2_2">
+                  <label for="param-2_2">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Горечь</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-2_3">
+                  <label for="param-2_3">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Горечь</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-2_4">
+                  <label for="param-2_4">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Горечь</span>
+                  </label>
+                </div>
+              </div>
+              <button class="catalog-sidebar__apply btn">Применить</button>
+            </div>
+          </div><!-- /dropdown -->
+        </div>
+        <div class="catalog-line__head-col">
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Размер партии
+              <img src="img/catalog/arrow-bottom.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="catalog-param">
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-3_1">
+                  <label for="param-3_1">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Размер партии</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-3_2">
+                  <label for="param-3_2">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Размер партии</span>
+                  </label>
+                </div>
+              </div>
+              <button class="catalog-sidebar__apply btn">Применить</button>
+            </div>
+          </div><!-- /dropdown -->
+        </div>
+        <div class="catalog-line__head-col">
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Крепость
+              <img src="img/catalog/arrow-bottom.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="catalog-param">
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-4_1">
+                  <label for="param-4_1">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Крепость</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-4_2">
+                  <label for="param-4_2">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Крепость</span>
+                  </label>
+                </div>
+              </div>
+              <button class="catalog-sidebar__apply btn">Применить</button>
+            </div>
+          </div><!-- /dropdown -->
+        </div>
+        <div class="catalog-line__head-col">
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Цветность
+              <img src="img/catalog/arrow-bottom.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu">
+              <div class="catalog-param">
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-5_1">
+                  <label for="param-5_1">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Цветность</span>
+                  </label>
+                </div>
+                <div class="catalog-param__checkbox">
+                  <input type="checkbox" id="param-5_2">
+                  <label for="param-5_2">
+                    <div class="catalog-param__checkbox-rect"><img src="img/sidebar/check-arrow.svg" alt="icon"></div>
+                    <span class="catalog-param__checkbox-text">Цветность</span>
+                  </label>
+                </div>
+              </div>
+              <button class="catalog-sidebar__apply btn">Применить</button>
+            </div>
+          </div><!-- /dropdown -->
+        </div>
+        <div class="catalog-line__head-col">
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Цена
+              <img src="img/catalog/arrow-bottom.svg" alt="icon">
+            </button>
+            <div class="dropdown-menu dropdown-menu-price">
+              <div class="catalog-param">
+                <div class="catalog-param__price-inputs">
+                  <div class="catalog-param__price-input">
+                    <span>от</span>
+                    <input type="number">
+                  </div>
+                  <div class="catalog-param__price-input">
+                    <span>до</span>
+                    <input type="number">
+                  </div>
+                </div>
+              </div>
+              <button class="catalog-sidebar__apply btn">Применить</button>
+            </div>
+          </div><!-- /dropdown -->
+        </div>
+
+
+      </div><!-- /catalog-line__head -->
+      <div class="catalog-line__content">
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"> <a href="product.html">Солод курский курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.0 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+        <div class="catalog-line__row">
+          <div class="catalog-line__col">
+            <div class="catalog-line__img">
+              <img src="img/catalog/catalog-line_1.jpg" alt="image">
+              <a href="product.html"></a>
+            </div>
+          </div>
+          <div class="catalog-line__col"><a href="product.html">Солод курский</a></div>
+          <div class="catalog-line__col">Завод
+            Курский солод</div>
+          <div class="catalog-line__col">32.700 IBUs</div>
+          <div class="catalog-line__col">23.015 л.</div>
+          <div class="catalog-line__col">4.900 %</div>
+          <div class="catalog-line__col">7.300 SRM</div>
+          <div class="catalog-line__col">5 200 руб.</div>
+        </div><!-- /catalog-line__row -->
+
+      </div><!-- /catalog-line__content -->
+    </div>
+  </div>
+  <ul class="catalog-line__mobile catalog-mobile">
+    
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+    <li class="catalog-mobile__item">
+      <div class="catalog-mobile__head">
+        <div class="catalog-mobile__image">
+          <img src="img/catalog/catalog-line_1.jpg" alt="image">
+          <a href="product.html"></a>
+        </div>
+        <div class="catalog-mobile__title">
+          <a href="product.html">Солод курский</a>          
+        </div>
+      </div><!-- /catalog-mobile__head -->
+      <div class="catalog-mobile__content">
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Производитель
+          </div>
+          <div class="catalog-mobile__col">
+            Завод курский солод
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Горечь
+          </div>
+          <div class="catalog-mobile__col">
+            32.700 IBUs
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Размер партии
+          </div>
+          <div class="catalog-mobile__col">
+            23.0 л.
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Крепость
+          </div>
+          <div class="catalog-mobile__col">
+            4.900 %
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цветность
+          </div>
+          <div class="catalog-mobile__col">
+            7.300 SRM
+          </div>
+        </div>
+        <div class="catalog-mobile__row">
+          <div class="catalog-mobile__col">
+            Цена
+          </div>
+          <div class="catalog-mobile__col">
+            200 руб.
+          </div>
+        </div>
+      </div>
+    </li><!-- /catalog-line__item -->
+
+  </ul>
+  <button class="catalog-content__btn btn">Показать ещё</button>
+</div>
+    </div>
+  </div>
+</section>
+		</main>
+		<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col first">
+        <a class="footer__logo logo" href="#">
+          <img src="img/footer/footer-logo.svg" alt="logo">
+        </a>
+        <div class="footer__contacts">
+          <a href="tel:88005553535" class="footer__phone">8 (800) 555-35-35</a>
+          <button type="button" class="footer__btn btn" data-toggle="modal" data-target="#modal-login">Заказать
+            звонок</button>
+          <a href="mailto:info@domain.ru " class="footer__mail">info@domain.ru </a>
+        </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/telegram.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/whatsapp.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/viber.svg" alt="icon">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <img src="img/footer/instagram.svg" alt="icon">
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copyright">
+          <p>
+            Копирование материалов запрещено.
+            Все права защищены. ООО “ООО”.
+          </p>
+        </div>
+      </div>
+      <div class="footer__col second">
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Покупателю</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Доставка</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Оплата</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Вопрос-ответ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Каталог</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Пиво разливное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво бутылочное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво светлое</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Пиво тёмное</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Крафтовое</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Информация</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">О компании</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Контакты</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Информация</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Калькуляторы</div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 1</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 2</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#">Калькулятор 3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- modals -->
+
+<!-- modal-login -->
+<div class="modal fade modal-order" id="modal-order" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-order-title">Оставить заявку</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="img/modal/close.svg" alt="icon"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table__content">
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="modal-email">E-mail или номер телефона *</label>
+              <input type="text" id="modal-email" name="e-mail">
+            </div>
+          </div><!-- /table__content-row -->
+          <div class="table__content-row">
+            <div class="input-wrapper">
+              <label for="order-text">Сообщение</label>
+              <input type="text" id="order-text" name="text">
+            </div>
+          </div><!-- /table__content-row -->
+        </div><!-- /table__content -->
+      </div>
+      <div class="modal-footer">
+        <div class="agreement agreement-contacts">
+          <input type="checkbox" id="agreement-checkbox-contacts2" class="custom-checkbox" checked>
+          <label for="agreement-checkbox-contacts2" class="custom-checkbox-text">
+            <p>
+              Я согласен (-на) с <a href="#">политикой конфиденциальности</a> 
+            </p>               
+          </label>
+        </div>
+        <button class="modal-order__btn btn">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+	<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+	<script src="js/app.min.js"></script>
+	
+</body>
+
+</html>
+
+
+
+
